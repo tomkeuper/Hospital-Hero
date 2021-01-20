@@ -86,11 +86,16 @@ html{
 }
 
 .menu > li{
-    height: 8em;
+    min-height: 5em;
     background-color: var(--button--color--blue);
     border-radius: 30px;
     width: 80%;
-    margin: auto;
+    margin: 5px auto;
+}
+
+.menu > li > figure > img{
+    width: 80%;
+    vertical-align: middle;
 }
 
 .menu{
@@ -102,4 +107,5 @@ html{
     bottom: 0%;
     width: 8em;
     background-color: white;
+    border-radius: 30px;
 }
