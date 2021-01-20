@@ -1,3 +1,8 @@
+:root {
+    --button--color--blue: #278783;
+
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -73,4 +78,28 @@ html{
     100%{
         opacity: 0;
     }
+}
+
+.menu--warpper{
+    background-color: red;
+    color: red;
+}
+
+.menu > li{
+    height: 8em;
+    background-color: var(--button--color--blue);
+    border-radius: 30px;
+    width: 80%;
+    margin: auto;
+}
+
+.menu{
+    text-align: center;
+    list-style-type: none;
+    position: fixed;
+    left: 0;
+    margin: 20px;
+    bottom: 0%;
+    width: 8em;
+    background-color: white;
 }
