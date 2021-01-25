@@ -90,11 +90,6 @@ html{
     }
 }
 
-.menu--warpper{
-    background-color: red;
-    color: red;
-}
-
 .menu > li{
     min-height: 5em;
     /*padding: 10px 0px;*/
