@@ -100,6 +100,7 @@ html{
     width: 100%; /*can be anything*/
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 .menu > li > figure > img{
