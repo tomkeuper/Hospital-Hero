@@ -100,8 +100,8 @@ html{
 }
 
 .menu > li > figure {
-    height: 100%; /*can be anything*/
-    width: 100%; /*can be anything*/
+    height: 100%;
+    width: 100%;
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -124,9 +124,8 @@ html{
     margin: auto;
 }
 
-.menu{
+.menu-wrapper{
     text-align: center;
-    list-style-type: none;
     position: fixed;
     left: 0;
     margin: 20px;
@@ -134,6 +133,10 @@ html{
     width: 8em;
     background-color: white;
     border-radius: 30px;
+}
+
+.menu{
+    list-style-type: none;
 }
 
 .collapsible > figure > img{
