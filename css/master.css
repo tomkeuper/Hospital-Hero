@@ -1,7 +1,17 @@
 :root {
+    /*Primary Color:*/
+    --button--color--safari-groen: #386362;
+    /*Secondary Color*/
     --button--color--blue: #278783;
-
+    --button--color--oranje: #E25A00;
+    --button--color--cyan: #0D857F;
+    --button--color--rood: #AF1B2E;
+    --button--color--geel: #FED248;
+    --button--color--zwart: #010000;
+    --button--color--paars: #511C36;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans&display=swap');
 
 *{
     padding: 0;
@@ -80,15 +90,9 @@ html{
     }
 }
 
-.menu--warpper{
-    background-color: red;
-    color: red;
-}
-
 .menu > li{
     min-height: 5em;
     /*padding: 10px 0px;*/
-    background-color: var(--button--color--blue);
     border-radius: 30px;
     width: 7em;
     height: 7em;
@@ -96,11 +100,15 @@ html{
 }
 
 .menu > li > figure {
-    height: 100%; /*can be anything*/
-    width: 100%; /*can be anything*/
+    height: 100%;
+    width: 100%;
     position: relative;
     display: inline-block;
     cursor: pointer;
+}
+
+.item-background {
+    background-color: var(--button--color--safari-groen);
 }
 
 .menu > li > figure > img{
@@ -116,9 +124,8 @@ html{
     margin: auto;
 }
 
-.menu{
+.menu-wrapper{
     text-align: center;
-    list-style-type: none;
     position: fixed;
     left: 0;
     margin: 20px;
@@ -126,4 +133,27 @@ html{
     width: 8em;
     background-color: white;
     border-radius: 30px;
+}
+
+.menu{
+    list-style-type: none;
+}
+
+.collapsible > figure > img{
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.collapsible {
+    background-color: #eee;
+    border-radius: 30px;
+    color: #444;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: left;
 }
