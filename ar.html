@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+    <script src="super-hands.js"></script>
+    <script src="collider.js"></script>
+
     <title>Document</title>
 </head>
 <body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="monkey" src="./assets/Monkey.glb"></a-asset-item>
+        </a-assets>
+        <a-entity progressive-controls></a-entity>
+
+        <a-entity static-body collide position="0 0 -5" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity>
+        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="15 15 1"></a-plane>
+        <a-sphere collide id="js--sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>
+
+    </a-scene>
     
 </body>
 </html>
