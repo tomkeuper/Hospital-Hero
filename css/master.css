@@ -2,11 +2,12 @@
     padding: 0;
     margin: 0;
     overflow-y: hidden;
+    font-family: 'Londrina Solid', cursive;
 }
 
 html{
     font-size: 62.5%;
-    font-family: 'Chewy', cursive;
+    font-family: 'Londrina Solid', cursive;
 }
 
 .header{
@@ -16,6 +17,7 @@ html{
     border-bottom-right-radius: 3rem;
     box-shadow: 0.5px 1px 4px 0.5rem #FF6F06;
     margin-bottom: 1.5rem;
+    color: #fff;
 }
 
 .header > h1{
@@ -58,8 +60,19 @@ html{
     transform: translate(-50%, -50%);
 }
 
-.introScherm > h1{
+.intro{
+    background-image: url('../img/achtergrond.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro__scherm > h1{
     animation: pulse 2s linear infinite;
+    position: absolute;
+    bottom: 30vh;
+    right: 10%;
+    color: white;
+
 }
 
 .list{
@@ -70,6 +83,78 @@ html{
     width: 10rem;
     height: 10rem;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    width: 100%; /* Full width */
+    height: 100%;
+    transform: translate(-50%, -50%); /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5%;
+    border-style: none;
+
+  }
+
+  .modal-content__image-container{
+      width: 20rem;
+      height: 20rem;
+      background-color: #FFEAB2;
+      border-radius: 50%;
+      box-shadow: 0px 5px 10px -3px #000;
+  }
+
+  .modal-content__image-container > img{
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  .modal-content > h2{
+      margin-bottom: 1rem;
+  }
+
+  .button-container{
+      display: flex;
+  }
+
+  .button-container > button{
+    background-color: #F69401;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 1px 5px 5px 1px #FF6F06;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    color: #fff;
+  }
+
+  .button-container > h2{
+      margin-left: 1rem;
+      margin-right: 1rem;
+  }
 
 @keyframes pulse{
     0%{

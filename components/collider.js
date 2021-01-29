@@ -1,12 +1,15 @@
 AFRAME.registerComponent('collide', {
     init: function (event) {
-      const monkey = document.getElementById('monkey');
+      const monkey = document.getElementById('js--monkey');
       const sphere = document.getElementById('js--sphere');
       const crate = document.getElementById('js--monkeyCrate');
+      const monkeyContainer = document.getElementById('js--monkeyContainer');
+      var modal = document.getElementById("myModal");
       
     
 
         this.collider = function(){
+            
             sphere.addEventListener('collide', (event)=>{
                 let collider = event.detail.body.el;
                 
@@ -18,7 +21,14 @@ AFRAME.registerComponent('collide', {
                     capture.value = 'property: position; to: 0 0 0; dur: 2000';
                     crate.setAttribute('animation', capture.value);
 
-                    let remove = document.createAttribute('animation__remove');
+                    setTimeout( function(){
+                        monkey.parentNode.removeChild(monkey);
+                        crate.parentNode.removeChild(crate);
+
+                        modal.style.display = "block";
+                    }, 3000);
+                    
+                    
                     
 
                 } else if(collider.getAttribute('id') === 'js--penguin'){

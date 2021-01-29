@@ -7,11 +7,14 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
-    <script src="super-hands.js"></script>
-    <script src="collider.js"></script>
+    <script src="components/super-hands.js"></script>
+    <script src="components/collider.js"></script>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet"> 
 
     <title>Document</title>
-</head>
+</hesad>
 <body>
     <a-scene>
         <a-assets>
@@ -19,10 +22,10 @@
         </a-assets>
         <a-entity progressive-controls></a-entity>
 
-        <a-entity static-body id="js--monkey" collide position="0 0 -5" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;">
+        <a-entity id="js--monkeyContainer" position="0 0 -5">
+            <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity>
             <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
         </a-entity>
-
 
         <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
         <a-sphere id="js--sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>
@@ -30,6 +33,24 @@
         <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
 
     </a-scene>
+
+    <div id="myModal" class="modal">
+
+       
+        <section class="modal-content">
+          <div class="modal-content__image-container">
+              <img src="img/Aap.png" alt="">
+          </div>
+          <h2>Gefeliciteerd!!</h2>
+          <h2>Je hebt een Aap gevangen!</h2>
+
+          <div class="button-container">
+              <button>Bekijk Aap</button>
+              <h2>of</h2>
+              <button>Naar Overzicht</button>
+          </div>
+
+        </section>
     
 </body>
 </html>

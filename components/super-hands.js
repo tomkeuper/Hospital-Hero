@@ -26,8 +26,7 @@ AFRAME.registerComponent('progressive-controls', {
       colliderEvent: 'raycaster-intersection',
       colliderEventProperty: 'els',
       colliderEndEvent: 'raycaster-intersection-cleared',
-      colliderEndEventProperty: rayEndProp,
-      colliderState: ''
+      colliderEndEventProperty: rayEndProp
     })
     gazeDefault.setAttribute('id', gazeDefaultId)
     gazeDefault.setAttribute('geometry', 'primitive: ring;' +
