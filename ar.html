@@ -15,13 +15,19 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-item id="monkey" src="./assets/Monkey.glb"></a-asset-item>
+            <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
 
-        <a-entity static-body collide position="0 0 -5" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity>
-        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="15 15 1"></a-plane>
-        <a-sphere collide id="js--sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>
+        <a-entity static-body id="js--monkey" collide position="0 0 -5" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;">
+            <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
+        </a-entity>
+
+
+        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
+        <a-sphere id="js--sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>
+
+        <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
 
     </a-scene>
     
