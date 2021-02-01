@@ -17,12 +17,10 @@
     padding: 0;
     margin: 0;
     overflow-y: hidden;
-    font-family: 'Londrina Solid', cursive;
 }
 
 html{
     font-size: 62.5%;
-    font-family: 'Londrina Solid', cursive;
 }
 
 .header{
@@ -34,6 +32,121 @@ html{
     margin-bottom: 1.5rem;
     color: #fff;
 }
+
+.header > h1{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Chewy', sans-serif;
+    font-size: 3.8rem;
+
+}
+
+.character-field{
+    height: 50vh;
+    background-color: #0D857F;
+    box-shadow: 0px 4px 4px #386362;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+
+
+.aap{
+    position: absolute;
+    height: 15rem;
+    z-index: 50;
+
+}
+
+.character-field__title{
+    text-align: center;
+    padding: 3.8rem;
+    font-size: 3rem;
+    font-family: 'Chewy', cursive;
+    text-shadow: 2px 2px #7d7d7d;
+}
+
+.character-field__circle2{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -85%);
+    height: 22rem;
+    width: 22rem;
+    background-color: rgb(196,212,189, 0.25);
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-field__circle1{
+    position: absolute;
+    height: 20rem;
+    width: 20rem;
+    background-color: rgb(196,212,189, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-field__circle{
+    position: absolute;
+    height: 18rem;
+    width: 18rem;
+    background-color: rgb(196,212,189, 0.75);
+    border-radius: 50%;
+    opacity: 0.75;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-field__circle__inner{
+    position: absolute;
+    height: 16rem;
+    width: 16rem;
+    background-color: #C4D4BD;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.description-field > section{
+    margin-top: 1rem;
+
+}
+
+.description-field > section > h2{
+    font-size: 2.2rem;
+    padding-left: 3rem;
+    font-family: 'Chewy', sans-serif;
+    color: #386362;
+}
+
+.arrow{
+    height: 4rem;
+    position: absolute;
+    left: 6%;
+    top: 5%;
+    fill: #fff;
+    filter: brightness(0) invert(1);
+}
+
+.description-field > section > p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+}
+
+
 
 .header > h1{
     text-align: center;
@@ -53,6 +166,14 @@ html{
     width: 11rem;
     height: 11rem;
     border-radius: 50%;
+}
+
+.main__section > li > img{
+    height: 7rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .camera{
@@ -108,7 +229,6 @@ html{
     width: 100%; /* Full width */
     height: 100%;
     transform: translate(-50%, -50%); /* Full height */
-    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
@@ -170,20 +290,6 @@ html{
       margin-left: 1rem;
       margin-right: 1rem;
   }
-
-@keyframes pulse{
-    0%{
-        opacity: 0;
-    }
-
-    50%{
-        opacity: 1;
-    }
-
-    100%{
-        opacity: 0;
-    }
-}
 
 .menu > li{
     min-height: 5em;
@@ -252,3 +358,7 @@ html{
     border: none;
     text-align: left;
 }
+
+/*  ==========
+    Animations
+    ========== */
