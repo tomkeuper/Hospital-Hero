@@ -12,7 +12,7 @@
     <script src="components/collider.js"></script>
     <link rel="stylesheet" href="css/master.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
     <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
 
     <title>Document</title>
@@ -20,21 +20,42 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-items id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-item id="banaan-obj" src="assets/models/banaan.obj"></a-asset-item>
+            <a-asset-item id="banaan-mtl" src="assets/models/banaan.mtl"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
+        <a-camera id="js--camera" >
+            <!-- <a-cursor id="js--cursor" color="red"></a-cursor> -->
+            <a-entity
+                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150;
+            from: 0.1 0.1 0.1; to: 1 1 1"
+                    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000;
+            from: 1 1 1; to: 0.1 0.1 0.1"
+                    animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 150;
+           to: 1 1 1"
+                    cursor = "fuse: true; fuseTimeout: 2000;"
+                    material = "color: black; shader: flat"
+                    geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+                    position = "0 0 -0.5"
+                    raycaster = "objects: .js--interact"
+            ></a-entity>
+        </a-camera>
 
+        <a-marker preset="hiro">
+          <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer rotation="-90 0 0" sound="src: url(assets/monkey1.mp3); autoplay:false; loop:true;"></a-entity>
+        </a-marker>
 
         <a-entity id="js--monkeyContainer" position="0 0 -5">
-            <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" ></a-entity>
-            <!-- animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;" -->
-            
-            <a-box id="js--monkeyCrate" position="0 3 -5" visible="false" color="red" scale="2 2 2s"></a-box>
+            <!-- <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity> -->
 
-            <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
-            
+            <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
+        </a-entity>
 
-            <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
+        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
+        <a-sphere id="js--sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>
+
+        <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
 
     </a-scene>
 
@@ -43,14 +64,14 @@
         <ul class="menu">
             <li class="item-background" onclick="listItem1">
                 <figure>
-                <img src="img/meat.png" alt="Een stuk steak">
+                <img src="img/steak.webp" alt="Een stuk steak">
             </figure></li>
             <li class="item-background">
                 <figure>
-                <img src="img/BANAAN.png" alt="Een gele banaan">
+                <img src="img/banana.webp" alt="Een gele banaan">
             </figure></li>
             <li class="item-background"><figure>
-                <img src="img/vis.png" alt="Een visje">
+                <img src="img/fish.webp" alt="Een visje">
             </figure></li>
         </ul>
         <button type="button" class="collapsible"><figure>
@@ -60,7 +81,7 @@
 
     <div id="myModal" class="modal">
 
-       
+
         <section class="modal-content">
           <div class="modal-content__image-container">
               <img src="img/Aap.png" alt="">
@@ -69,14 +90,13 @@
           <h2>Je hebt een Aap gevangen!</h2>
 
           <div class="button-container">
-              <button id="js--bekijkAap">Bekijk Aap</button>
+              <button>Bekijk Aap</button>
               <h2>of</h2>
-              <button id="js--aapOverzicht">Naar Overzicht</button>
+              <button>Naar Overzicht</button>
           </div>
 
         </section>
         <script type="text/javascript" src="js/list.js"></script>
-        
-        <script src="js/main.js"></script>
+        <script src="main.js"></script>
     </body>
     </html>
