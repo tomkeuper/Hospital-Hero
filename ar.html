@@ -21,8 +21,7 @@
     <a-scene>
         <a-assets>
             <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
-            <a-asset-item id="banaan-obj" src="assets/models/banaan.obj"></a-asset-item>
-            <a-asset-item id="banaan-mtl" src="assets/models/banaan.mtl"></a-asset-item>
+            <a-asset-item id="banaan" src="assets/banaan.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
         <a-camera id="js--camera" >
@@ -42,8 +41,9 @@
             ></a-entity>
         </a-camera>
 
-        <a-marker preset="hiro">
-          <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer rotation="-90 0 0" sound="src: url(assets/monkey1.mp3); autoplay:false; loop:true;"></a-entity>
+        <a-marker preset='hiro' id="marker-hiro" registerevents>
+            <!--<a-entity static-body transformeren visible="true" id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer rotation="-90 0 0" sound="src: url(assets/monkey1.mp3); autoplay:false; loop:true;"></a-entity>-->
+            <a-entity transformeren visible="true" class="clickable" gesture-handler position="0 0 0" class="item" id="js--monkey" gltf-model="#monkey"></a-entity>
         </a-marker>
 
         <a-entity id="js--monkeyContainer" position="0 0 -5">
@@ -97,6 +97,7 @@
 
         </section>
         <script type="text/javascript" src="js/list.js"></script>
-        <script src="main.js"></script>
+        <script type="text/javascript" src="js/marker.js"></script>
+        <script src="js/main.js"></script>
     </body>
     </html>
