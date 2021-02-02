@@ -20,7 +20,7 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-items id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-item id="monkey" src="assets/Monkey.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
 
@@ -41,15 +41,16 @@
 <!--    Item menu for items-->
     <div class="menu-wrapper">
         <ul class="menu">
-            <li class="item-background" onclick="listItem1">
+            <li class="item-background" onclick="listSteak">
                 <figure>
                 <img src="img/meat.png" alt="Een stuk steak">
             </figure></li>
-            <li class="item-background">
+            <li class="item-background" onclick="listBanaan">
                 <figure>
                 <img src="img/banana.webp" alt="Een gele banaan">
             </figure></li>
-            <li class="item-background"><figure>
+            <li class="item-background" onclick="listFish">
+                <figure>
                 <img src="img/vis.png" alt="Een visje">
             </figure></li>
         </ul>

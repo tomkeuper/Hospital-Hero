@@ -9,12 +9,12 @@ aapOverzicht.onclick = function(){
     window.location.href = 'monkeylist.html';
 }
 
-function listItem1() {
-    console.log("item 1")
+function listFish() {
+    console.log("Fish")
 }
-function listItem1() {
-    console.log("item 1")
+function listSteak() {
+    console.log("Steak")
 }
-function listItem1() {
-    console.log("item 1")
+function listBanaan() {
+    console.log("Banaan")
 }
