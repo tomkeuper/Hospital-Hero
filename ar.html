@@ -42,7 +42,8 @@
 
 
         <a-entity id="js--monkeyContainer" position="0 0 -5">
-            <!-- <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity> -->
+            <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" ></a-entity>
+            <!-- animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;" -->
             
             <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
         </a-entity>
@@ -59,14 +60,14 @@
         <ul class="menu">
             <li class="item-background" onclick="listItem1">
                 <figure>
-                <img src="img/steak.webp" alt="Een stuk steak">
+                <img src="img/meat.png" alt="Een stuk steak">
             </figure></li>
             <li class="item-background">
                 <figure>
-                <img src="img/banana.webp" alt="Een gele banaan">
+                <img src="img/BANAAN.png" alt="Een gele banaan">
             </figure></li>
             <li class="item-background"><figure>
-                <img src="img/fish.webp" alt="Een visje">
+                <img src="img/vis.png" alt="Een visje">
             </figure></li>
         </ul>
         <button type="button" class="collapsible"><figure>
@@ -85,13 +86,14 @@
           <h2>Je hebt een Aap gevangen!</h2>
 
           <div class="button-container">
-              <button>Bekijk Aap</button>
+              <button id="js--bekijkAap">Bekijk Aap</button>
               <h2>of</h2>
-              <button>Naar Overzicht</button>
+              <button id="js--aapOverzicht">Naar Overzicht</button>
           </div>
 
         </section>
         <script type="text/javascript" src="js/list.js"></script>
-        <script src="main.js"></script>
+        
+        <script src="js/main.js"></script>
     </body>
     </html>
