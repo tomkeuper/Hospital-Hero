@@ -20,7 +20,7 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-items id="monkey" src="assets/Monkey.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
         <a-camera id="js--camera" >
@@ -42,7 +42,8 @@
 
 
         <a-entity id="js--monkeyContainer" position="0 0 -5">
-            <!-- <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity> -->
+            <a-entity id="js--monkey" collide position="0 0 0" gltf-model="#monkey" ></a-entity>
+            <!-- animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;" -->
             
             <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
         </a-entity>
@@ -85,14 +86,14 @@
           <h2>Je hebt een Aap gevangen!</h2>
 
           <div class="button-container">
-              <button>Bekijk Aap</button>
+              <button id="js--bekijkAap">Bekijk Aap</button>
               <h2>of</h2>
-              <button>Naar Overzicht</button>
+              <button id="js--aapOverzicht">Naar Overzicht</button>
           </div>
 
         </section>
         <script type="text/javascript" src="js/list.js"></script>
         
-        <script src="main.js"></script>
+        <script src="js/main.js"></script>
     </body>
     </html>
