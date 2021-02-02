@@ -12,3 +12,18 @@ for (i = 0; i < collapsible.length; i++) {
         }
     });
 }
+
+function listFish() {
+    console.log("Fish")
+    console.log(menuItem.outerHTML)
+    // var tempItem = menuItem
+    menuItem.replaceWith('<a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".1 .1 .1" position="1 1 1" gltf-model="#list-fish-glb" ></a-entity>');
+    // menuItem.setAttribute('gltf-model', "#list-fish-glb")
+}
+function listSteak() {
+    console.log("Steak")
+}
+function listBanaan() {
+    console.log("Banaan")
+    menuItem.setAttribute('gltf-model', '#list-banaan-glb')
+}
