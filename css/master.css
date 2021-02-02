@@ -37,8 +37,8 @@ html{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Chewy', sans-serif;
     font-size: 3.8rem;
+    font-family: 'Chewy', sans-serif;
 
 }
 
@@ -199,14 +199,16 @@ html{
     background-image: url('../img/achtergrond.png');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 
 .intro__scherm > h1{
     animation: pulse 2s linear infinite;
     position: absolute;
-    bottom: 30vh;
-    right: 10%;
+    bottom: 15vh;
+    right: 5%;
     color: white;
+    font-size: 2.9rem;
 
 }
 
@@ -361,3 +363,9 @@ html{
 /*  ==========
     Animations
     ========== */
+
+@keyframes pulse{
+    0%{ opacity: 1; }
+    50%{ opacity: .0 }
+    100%{ opacity: 1; }
+}

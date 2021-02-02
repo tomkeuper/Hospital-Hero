@@ -2,7 +2,7 @@ AFRAME.registerComponent('collide', {
     init: function (event) {
       const monkey = document.getElementById('js--monkey');
       const sphere = document.getElementById('js--sphere');
-      const crate = document.getElementById('js--monkeyCrate');s
+      const crate = document.getElementById('js--monkeyCrate');
       var modal = document.getElementById("myModal");
       
     
