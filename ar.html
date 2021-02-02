@@ -20,38 +20,21 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-items id="monkey" src="assets/Monkey.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
-        <a-camera id="js--camera" >
-            <!-- <a-cursor id="js--cursor" color="red"></a-cursor> -->
-            <a-entity
-                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150;
-            from: 0.1 0.1 0.1; to: 1 1 1"
-                    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000;
-            from: 1 1 1; to: 0.1 0.1 0.1"
-                    animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 150;
-           to: 1 1 1"
-                    cursor = "fuse: true; fuseTimeout: 2000;"
-                    material = "color: black; shader: flat"
-                    geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
-                    position = "0 0 -0.5"
-                    raycaster = "objects: .js--interact"
-            ></a-entity>
-        </a-camera>
 
 
         <a-entity id="js--monkeyContainer" position="0 0 -5">
             <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" ></a-entity>
             <!-- animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;" -->
             
-            <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
-        </a-entity>
+            <a-box id="js--monkeyCrate" position="0 3 -5" visible="false" color="red" scale="2 2 2s"></a-box>
 
-        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
-        <a-sphere id="js--sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>
+            <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
+            
 
-        <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
+            <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
 
     </a-scene>
 
