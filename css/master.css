@@ -142,7 +142,7 @@ html{
     line-height: 2rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    
+
 }
 
 
@@ -291,6 +291,10 @@ html{
       margin-left: 1rem;
       margin-right: 1rem;
   }
+
+.css--background{
+    background-color: white;
+}
 
 .menu > li{
     min-height: 5em;
