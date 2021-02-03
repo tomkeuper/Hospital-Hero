@@ -28,55 +28,34 @@
             <a-asset-item id="list-fish-glb" src="assets/nemo.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
-        <a-camera id="js--camera" >
-            <!-- <a-cursor id="js--cursor" color="red"></a-cursor> -->
-            <a-entity
-                    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150;
-            from: 0.1 0.1 0.1; to: 1 1 1"
-                    animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000;
-            from: 1 1 1; to: 0.1 0.1 0.1"
-                    animation="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 150;
-           to: 1 1 1"
-                    cursor = "fuse: true; fuseTimeout: 2000;"
-                    material = "color: black; shader: flat"
-                    geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
-                    position = "0 0 -0.5"
-                    raycaster = "objects: .js--interact"
-            ></a-entity>
-        </a-camera>
 
         <a-marker preset='hiro' id="marker-hiro" registerevents>
-            <!--<a-entity static-body transformeren visible="true" id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer rotation="-90 0 0" sound="src: url(assets/monkey1.mp3); autoplay:false; loop:true;"></a-entity>-->
-            <a-entity transformeren visible="true" class="clickable" gesture-handler position="0 0 0" class="item" id="js--monkey" gltf-model="#monkey"></a-entity>
+            <a-entity transformeren visible="false" class="clickable" gesture-handler position="0 0 0" class="item" id="js--monkey" gltf-model="#monkey"></a-entity>
         </a-marker>
 
         <a-entity id="js--monkeyContainer" position="0 0 -5">
-            <!-- <a-entity static-body id="js--monkey" collide position="0 0 0" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity> -->
 
             <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
         </a-entity>
 
         <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
-
-<!--        <a-sphere id="js&#45;&#45;sphere" hoverable grabbable stretchable dynamic-body color="red" scale=".5 .5 .5" position="0 1 0"></a-sphere>-->
-        <a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".1 .1 .1" position="1 1 1" gltf-model="#list-banaan-glb" ></a-entity>
+        <a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".2 .2 .2" position="0 1 -2" gltf-model="" ></a-entity>
 
         <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
 
     </a-scene>
 
-<!--    Item menu for items-->
     <div class="menu-wrapper">
         <ul class="menu">
-            <li class="item-background" onclick="listItem1">
+            <li class="item-background" id="js--steak">
                 <figure>
                 <img src="img/steak.webp" alt="Een stuk steak">
             </figure></li>
-            <li class="item-background">
+            <li class="item-background" >
                 <figure>
-                <img src="img/banana.webp" alt="Een gele banaan">
+                <img id="js--banaan" src="img/banana.webp" alt="Een gele banaan">
             </figure></li>
-            <li class="item-background"><figure>
+            <li class="item-background" id="js--vis"><figure>
                 <img src="img/fish.webp" alt="Een visje">
             </figure></li>
         </ul>
@@ -94,9 +73,9 @@
           <h2>Je hebt een Aap gevangen!</h2>
 
           <div class="button-container">
-              <button>Bekijk Aap</button>
+              <button id="js--bekijkAap">Bekijk Aap</button>
               <h2>of</h2>
-              <button>Naar Overzicht</button>
+              <button id="js--aapOverzicht">Naar Overzicht</button>
           </div>
 
         </section>

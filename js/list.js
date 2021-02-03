@@ -1,5 +1,11 @@
 var collapsible = document.getElementsByClassName("collapsible");
 var i;
+const vlees = document.getElementById('js--steak');
+const banaan = document.getElementById('js--banaan');
+const vis = document.getElementById('js--vis');
+const menuItem = document.getElementById('js--menu-item');
+
+
 
 for (i = 0; i < collapsible.length; i++) {
     collapsible[i].addEventListener("click", function() {
@@ -13,17 +19,17 @@ for (i = 0; i < collapsible.length; i++) {
     });
 }
 
-function listFish() {
-    console.log("Fish")
-    console.log(menuItem.outerHTML)
+vis.onclick = function() {
+    console.log("Fish");
     // var tempItem = menuItem
-    menuItem.replaceWith('<a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".1 .1 .1" position="1 1 1" gltf-model="#list-fish-glb" ></a-entity>');
+    menuItem.setAttribute('gltf-model', 'assets/nemo.glb');
     // menuItem.setAttribute('gltf-model', "#list-fish-glb")
 }
-function listSteak() {
-    console.log("Steak")
+vlees.onclick = function() {
+    console.log("Steak");
 }
-function listBanaan() {
-    console.log("Banaan")
-    menuItem.setAttribute('gltf-model', '#list-banaan-glb')
+
+banaan.onclick = function(){
+    console.log("Banaan");
+    menuItem.setAttribute('gltf-model', 'assets/banaan.glb');
 }
