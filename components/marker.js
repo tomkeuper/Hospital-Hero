@@ -5,6 +5,7 @@ init: function () {
 
   marker.addEventListener('markerFound', function() {
     var markerId = marker.id;
+    console.log('markerFound', markerId);
     monkey.setAttribute('visible', 'true');
 
   });

@@ -19,7 +19,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a-scene>
+    <a-scene >
         <a-assets>
             <a-asset-item id="monkey-glb" src="assets/Monkey.glb"></a-asset-item>
             <a-asset-item id="tree-glb" src="assets/boom.glb"></a-asset-item>
@@ -27,19 +27,21 @@
         </a-assets>
         <a-entity progressive-controls></a-entity>
 
-        <a-marker type="pattern" url="./img/QRcode.patt" id="marker-monkey" registerevents>
-            
+        <!-- preset="hiro" -->
+        
+        <a-marker preset="hiro">
+            <a-entity static-body collide class="clickable" gesture-handler id="js--monkey" gltf-model="#monkey-glb" scale=".5 .5 .5" rotation="-90 0 0"></a-entity>
+            <a-entity id="js--heart" position="0 1 0" visible="false" scale=".3 .3 .3" gltf-model="#heart-glb" rotation="-90 0 0"></a-entity>     
+            <a-entity position="-1 0 0" gltf-model="#tree-glb" scale=".5 .5 .5" rotation="-90 0 0"></a-entity>
         </a-marker>
 
-        <a-entity static-body collide visible="true" class="clickable" gesture-handler position="0 0 -5" id="js--monkey" gltf-model="#monkey-glb"></a-entity>
-        <a-entity id="js--heart" position="0 1 -5" visible="false" scale=".3 .3 .3" gltf-model="#heart-glb"></a-entity>     
-        <a-entity position="2 -1.5 -7" gltf-model="#tree-glb"></a-entity>
+        
         
         <a-text id="js--aapText" visible="false" position="-1 3 -5" value="De aap houdt niet van vis"></a-text>
 
         <a-plane static-body color="blue" visible="false" rotation="-90 0 0" position="0 -2 0" scale="200 200 1"></a-plane>
         <a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".2 .2 .2" position="0 1 -2" gltf-model="" ></a-entity>
-        
+
     </a-scene>
 
     <div class="menu-wrapper">

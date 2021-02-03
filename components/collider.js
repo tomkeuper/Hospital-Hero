@@ -17,13 +17,13 @@ AFRAME.registerComponent('collide', {
                     
                         heart.setAttribute('visible', 'true');
                         let capture = document.createAttribute('animation');
-                        capture.value = 'property: position; to: 0 2.5 -5s; dur: 2000';
+                        capture.value = 'property: position; to: 0 3 0; dur: 2000';
                         heart.setAttribute('animation', capture.value);
                         localStorage.setItem('Monkey', true);
 
                         setTimeout( function(){
                             modal.style.display = "block";
-                        }, 3000);
+                        }, 5000);
                         
 
                 } if(item.getAttribute('gltf-model') === 'assets/nemo.glb' && collider.getAttribute('id') === 'js--monkey'){
