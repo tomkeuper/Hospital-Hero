@@ -10,6 +10,7 @@
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="components/super-hands.js"></script>
     <script src="components/collider.js"></script>
+    <script src="components/marker.js"></script>
     <link rel="stylesheet" href="css/master.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
@@ -20,29 +21,25 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
-            <a-asset-item id="banaan" src="assets/banaan.glb"></a-asset-item>
-            <a-asset-item id="banaan-obj" src="assets/models/banaan.obj"></a-asset-item>
-            <a-asset-item id="banaan-mtl" src="assets/models/banaan.mtl"></a-asset-item>
-            <a-asset-item id="list-banaan-glb" src="assets/banaan.glb"></a-asset-item>
-            <a-asset-item id="list-fish-glb" src="assets/nemo.glb"></a-asset-item>
+            <a-asset-item id="monkey-glb" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-item id="tree-glb" src="assets/boom.glb"></a-asset-item>
+            <a-asset-item id="heart-glb" src="assets/heart.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
 
-        <a-marker preset='hiro' id="marker-hiro" registerevents>
-            <a-entity transformeren visible="false" class="clickable" gesture-handler position="0 0 0" class="item" id="js--monkey" gltf-model="#monkey"></a-entity>
+        <a-marker type="pattern" url="./img/QRcode.patt" id="marker-monkey" registerevents>
+            
         </a-marker>
 
-        <a-entity id="js--monkeyContainer" position="0 0 -5">
+        <a-entity static-body collide visible="true" class="clickable" gesture-handler position="0 0 -5" id="js--monkey" gltf-model="#monkey-glb"></a-entity>
+        <a-entity id="js--heart" position="0 1 -5" visible="false" scale=".3 .3 .3" gltf-model="#heart-glb"></a-entity>     
+        <a-entity position="2 -1.5 -7" gltf-model="#tree-glb"></a-entity>
+        
+        <a-text id="js--aapText" visible="false" position="-1 3 -5" value="De aap houdt niet van vis"></a-text>
 
-            <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
-        </a-entity>
-
-        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
+        <a-plane static-body color="blue" visible="false" rotation="-90 0 0" position="0 -2 0" scale="200 200 1"></a-plane>
         <a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".2 .2 .2" position="0 1 -2" gltf-model="" ></a-entity>
-
-        <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
-
+        
     </a-scene>
 
     <div class="menu-wrapper">
@@ -77,10 +74,11 @@
               <h2>of</h2>
               <button id="js--aapOverzicht">Naar Overzicht</button>
           </div>
-
         </section>
-        <script type="text/javascript" src="js/list.js"></script>
-        <script type="text/javascript" src="js/marker.js"></script>
+    </div>
+        
+        <script src="js/list.js"></script>
+        
         <script src="js/main.js"></script>
     </body>
     </html>

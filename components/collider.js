@@ -1,38 +1,38 @@
 AFRAME.registerComponent('collide', {
     init: function (event) {
       const monkey = document.getElementById('js--monkey');
-      const sphere = document.getElementById('js--sphere');
-      const crate = document.getElementById('js--monkeyCrate');
+      const item = document.getElementById('js--menu-item');
+      const heart = document.getElementById('js--heart');
       var modal = document.getElementById("myModal");
+      const aapText = document.getElementById('js--aapText');
       
     
 
         this.collider = function(){
             
-            sphere.addEventListener('collide', (event)=>{
+            item.addEventListener('collide', (event)=>{
                 let collider = event.detail.body.el;
                 
-                if (collider.getAttribute('id') === 'js--monkey'){
-                    crate.setAttribute('visible', 'true');
-                    let capture = document.createAttribute('animation');
-                    capture.value = 'property: position; to: 0 0 0; dur: 2000';
-                    crate.setAttribute('animation', capture.value);
-                    localStorage.setItem('Monkey', true);
+                if (item.getAttribute('gltf-model') === 'assets/banaan.glb' && collider.getAttribute('id') === 'js--monkey'){
+                    
+                        heart.setAttribute('visible', 'true');
+                        let capture = document.createAttribute('animation');
+                        capture.value = 'property: position; to: 0 2.5 -5s; dur: 2000';
+                        heart.setAttribute('animation', capture.value);
+                        localStorage.setItem('Monkey', true);
+
+                        setTimeout( function(){
+                            modal.style.display = "block";
+                        }, 3000);
+                        
+
+                } if(item.getAttribute('gltf-model') === 'assets/nemo.glb' && collider.getAttribute('id') === 'js--monkey'){
+                    
+                    aapText.setAttribute('visible', 'true');
 
                     setTimeout( function(){
-                        monkey.parentNode.removeChild(monkey);
-                        crate.parentNode.removeChild(crate);
-
-                        modal.style.display = "block";
+                        aapText.parentNode.removeChild(aapText);
                     }, 3000);
-                    
-                    
-                    
-
-                } else if(collider.getAttribute('id') === 'js--penguin'){
-                    console.log('?')
-                } else {
-
                 }
             })
         }

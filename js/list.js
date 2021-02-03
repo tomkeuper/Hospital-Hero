@@ -20,16 +20,11 @@ for (i = 0; i < collapsible.length; i++) {
 }
 
 vis.onclick = function() {
-    console.log("Fish");
-    // var tempItem = menuItem
     menuItem.setAttribute('gltf-model', 'assets/nemo.glb');
-    // menuItem.setAttribute('gltf-model', "#list-fish-glb")
 }
 vlees.onclick = function() {
-    console.log("Steak");
 }
 
 banaan.onclick = function(){
-    console.log("Banaan");
     menuItem.setAttribute('gltf-model', 'assets/banaan.glb');
 }
