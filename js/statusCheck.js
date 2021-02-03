@@ -1,5 +1,9 @@
-localStorage.setItem('Penguin', false);
-localStorage.setItem('Monkey', false);
+if( localStorage.getItem('Monkey') != 'true'){
+    
+    localStorage.setItem('Monkey', 'false');
+}
+
+
 
 console.log(localStorage);
 
@@ -8,10 +12,21 @@ const monkeyIMG = document.getElementById('js--monkeyIMG');
 const monkeyButton = document.getElementById('js--monkeyList');
 console.log(monkey);
 
-if (monkey === 'false'){
+if (localStorage.getItem('Monkey') === 'false'){
     monkeyIMG.style.filter = 'brightness(0%)';
     console.log('hoi');
-} else {
-    monkeyIMG.style.filter = 'brightness(100%)';
-    monkeyButton.location.href = 'monkeylist.html';
 }
+
+setInterval( function(){
+    
+if (localStorage.getItem('Monkey') === 'true') {
+    monkeyIMG.style.filter = 'brightness(100%)';
+    monkeyButton.onclick = function (){
+        window.location.href = 'monkeylist.html';
+    }
+    
+    console.log('Dit Werkt')
+}
+
+}, 2000);
+
