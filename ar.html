@@ -12,7 +12,7 @@
     <script src="components/collider.js"></script>
     <link rel="stylesheet" href="css/master.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
     <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
 
     <title>Document</title>
@@ -20,46 +20,51 @@
 <body>
     <a-scene>
         <a-assets>
-            <a-asset-items id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-item collide id="monkey" src="assets/Monkey.glb"></a-asset-item>
+            <a-asset-item id="banaan" src="assets/banaan.glb"></a-asset-item>
+            <a-asset-item id="banaan-obj" src="assets/models/banaan.obj"></a-asset-item>
+            <a-asset-item id="banaan-mtl" src="assets/models/banaan.mtl"></a-asset-item>
+            <a-asset-item id="list-banaan-glb" src="assets/banaan.glb"></a-asset-item>
+            <a-asset-item id="list-fish-glb" src="assets/nemo.glb"></a-asset-item>
         </a-assets>
         <a-entity progressive-controls></a-entity>
 
-        <a-sphere id="js--sphere" dynamic-body hoverable grabbable stretchable color="red" scale=".5 .5 .5" position="0 1 -1"></a-sphere>
-            <a-entity collide static-body id="js--monkey" position="0 0 -5" gltf-model="#monkey" animation-mixer sound="src: url(assets/monkey1.mp3); autoplay:true; loop:true;"></a-entity>
-            
-            
-            <a-box id="js--monkeyCrate" position="0 3 -5" visible="false" color="red" scale="2 2 2s"></a-box>
+        <a-marker preset='hiro' id="marker-hiro" registerevents>
+            <a-entity transformeren visible="false" class="clickable" gesture-handler position="0 0 0" class="item" id="js--monkey" gltf-model="#monkey"></a-entity>
+        </a-marker>
 
-            <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
-            
+        <a-entity id="js--monkeyContainer" position="0 0 -5">
 
-            <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
+            <a-box id="js--monkeyCrate" position="0 3 0" visible="false" color="red" scale="2 2 2s"></a-box>
+        </a-entity>
+
+        <a-plane static-body color="blue" rotation="-90 0 0" position="0 -2 0" scale="50 50 1"></a-plane>
+        <a-entity id="js--menu-item" hoverable grabbable dynamic-body scale=".2 .2 .2" position="0 1 -2" gltf-model="" ></a-entity>
+
+        <a-box static-body id="js--penguin" position="-2 0 -5"></a-box>
 
     </a-scene>
 
-<!--    Item menu for items-->
     <div class="menu-wrapper">
         <ul class="menu">
-            <li class="item-background" onclick="listItem1">
+            <li class="item-background" id="js--steak">
                 <figure>
-                <img src="img/meat.png" alt="Een stuk steak">
+                <img src="img/steak.webp" alt="Een stuk steak">
             </figure></li>
-            <li class="item-background">
+            <li class="item-background" >
                 <figure>
-                <img src="img/BANAAN.png" alt="Een gele banaan">
+                <img id="js--banaan" src="img/banana.webp" alt="Een gele banaan">
             </figure></li>
-            <li class="item-background"><figure>
-                <img src="img/vis.png" alt="Een visje">
+            <li class="item-background" id="js--vis"><figure>
+                <img src="img/fish.webp" alt="Een visje">
             </figure></li>
         </ul>
-        <button type="button" class="collapsible"><figure>
-            <img src="img/cross-sign.svg" alt="een kruis">
-        </figure></button>
+        <button type="button" class="collapsible"></button>
     </div>
 
     <div id="myModal" class="modal">
 
-       
+
         <section class="modal-content">
           <div class="modal-content__image-container">
               <img src="img/Aap.png" alt="">
@@ -75,7 +80,7 @@
 
         </section>
         <script type="text/javascript" src="js/list.js"></script>
-        
+        <script type="text/javascript" src="js/marker.js"></script>
         <script src="js/main.js"></script>
     </body>
     </html>
